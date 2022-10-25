@@ -1,35 +1,17 @@
 import React from "react";
-import Header from "./Header";
-import ReviewCard from "./ReviewCard";
-import SearchBar from "./SearchBar"
+import "./Search.css"
 
-function Search({
-    restaurants,
-    searchValue,
-    handleSearchChange,
-    searchQuery,
-    updateSearchQuery,
-    handleCardClick,
-}) {
-  const showRestaurants = restaurants.map((restaurant) => (
-    <ReviewCard handleCardClick={handleCardClick} restaurant={restaurant} />
-  ));
+function Search({handleSearchChange, searchValue}) {
 
-  return (
-    <div>
-      <SearchBar
-        searchValue={searchValue}
-        handleSearchChange={handleSearchChange}
-        updateSearchQuery={updateSearchQuery}
-      />
-      <p style={{ marginTop: "20px" }}>
-        {searchQuery.length === 0
-          ? ""
-          : `showing results for ${searchQuery}...`}
-      </p>
-      <div className="reviews-container">{showRestaurants}</div>
-    </div>
-  );
+
+    return (
+        <div className="search">
+            <form className="search-bar">
+                <input type="text" placeholder="Search restaurants..." value={searchValue} onChange={handleSearchChange}/>
+            </form>
+        </div>
+    )
+
 }
 
-export default Search;
+export default Search
