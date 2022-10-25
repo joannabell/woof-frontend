@@ -4,8 +4,6 @@ import Header from "./Header"
 import { useEffect } from "react"
 
 
-
-
 function App() {
   useEffect(() => {
     fetch("http://localhost:9292/test")
