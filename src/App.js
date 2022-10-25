@@ -1,31 +1,28 @@
 import './App.css';
-import NavBar from "./NavBar";
+import Header from "./Header";
+import ImageContainer from "./ImageContainer"
+import ReviewContainer from "./ReviewContainer"
 import { useState, useEffect } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [ searchValue, setSearchValue ] = useState("")//updates on search change
 
   useEffect(() => {
-    fetch("http://localhost:9292/")
+    fetch("http://localhost:9292/restaurants")
       .then((r) => r.json())
       .then((data) => console.log(data))
-
   }, []);
 
-  // search restaurants
-  function handleSearchChange(event) {
-    setSearchValue(event.target.value)
-  }
 
-  const searchedRestaurants = restaurants.filter((restaurant) => {})
-  const restaurantName = restaurant.name.toLowerCase()
-  const search = searchValue.toLowerCase()
+
 
   return (
     <div className="App">
-      <NavBar />
-    </div>
+      <Header />
+      <ImageContainer />
+      <ReviewContainer />
+    </div>   
   )
-  }
+}
 
 export default App;

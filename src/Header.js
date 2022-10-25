@@ -1,5 +1,6 @@
 import React from "react";
-import SearchBar from "./SearchBar"
+import Search from "./Search";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
@@ -9,7 +10,15 @@ function Header() {
           Woof 🐾
         </span>
       </h1>
-      <SearchBar />
+      <Search />
+      <div className="nav-links">
+        <NavLink className="register-link" to="/users">
+          Register {" "}
+        </NavLink>
+        <NavLink className="reviews-link" to="/reviews">
+          {" "} Reviews
+        </NavLink>
+      </div>
     </div>
   );
 }
