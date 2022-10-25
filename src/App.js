@@ -1,6 +1,7 @@
 import './App.css';
-import NavBar from "./NavBar";
-import { useEffect } from "react";
+import Header from "./Header"
+import { useEffect } from "react"
+
 
 function App() {
   useEffect(() => {
