@@ -25,6 +25,11 @@
   color: white;
 }
 
+.title-text {
+  font-family: "Serif", Georgia;
+  font-size: 50px;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -67,6 +72,14 @@
   height: 50%;
 }
 
+.like-button {
+  background-color: #8FBC8F;
+  border-radius: 25%;
+  width: 12%;
+  font-weight: bold;
+  color: white;
+}
+
 .card-strong {
   padding: 2px;
   margin: 8px 0;
@@ -79,37 +92,3 @@
 .card-p {
   margin: 14px 0;
 }
-
-
-
-
-
-/*
-.ImageContainer {}
-
-.ReviewContainer {} */
-
-
-/* .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 20px;
-  padding-right: 20px;
-  background-color: rgb(42, 160, 238);
-  height: 100px
-}
-
-.navbar h1 {
-  font-family: 'Fredoka One', cursive;
-  font-weight: 400;
-  font-size: 38px;
-}
-
-.nav-links a{
-  color:rgb(3, 3, 3);
-  text-decoration: none;
-  padding: 10px;
-  font-weight: 600;
-  font-size: 17px;
-} */

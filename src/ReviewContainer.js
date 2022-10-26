@@ -1,22 +1,20 @@
 // import Card from "react-bootstrap/Card";
 import ReviewCard from "./ReviewCard"
 import { useState, useEffect } from "react"
+import Search from "./Search"
 
 // import { useState, useEffect } from "react"
 
 function ReviewContainer({  setRestaurants, restaurants }) {
-    const [favorites, setFavorites] = useState(false)
+    
 
-    const onFavoriteRestaurants = (favoriteRestaurants) => {
-        const updatedRestaurantsClick = restaurants.map((restaurant) =>
-        restaurant.id === favoriteRestaurants.id ? favoriteRestaurants : restaurant
-        );
-        setRestaurants(updatedRestaurantsClick)
-    }
 
-    const handleFavoriteRestaurants = () => {
-        setFavorites((favorite) => !favorite);
-    };
+    // const onFavoriteRestaurants = (favoriteRestaurants) => {
+    //     const updatedRestaurantsClick = restaurants.map((restaurant) =>
+    //     restaurant.id === favoriteRestaurants.id ? favoriteRestaurants : restaurant
+    //     );
+    //     setRestaurants(updatedRestaurantsClick)
+    // }
 
     return (
             <div className="review-container">
@@ -37,7 +35,8 @@ function ReviewContainer({  setRestaurants, restaurants }) {
                             <ReviewCard
                             restaurant={restaurant}
                             setRestaurants={setRestaurants} 
-                            restaurants={restaurants}/>
+                            restaurants={restaurants}
+                            />
                         </div>
                         )
                     }
