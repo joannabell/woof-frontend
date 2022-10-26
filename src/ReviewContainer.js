@@ -5,16 +5,8 @@ import Search from "./Search"
 
 // import { useState, useEffect } from "react"
 
-function ReviewContainer({  setRestaurants, restaurants }) {
+function ReviewContainer({  setRestaurants, restaurants, restaurants2 }) {
     
-
-
-    // const onFavoriteRestaurants = (favoriteRestaurants) => {
-    //     const updatedRestaurantsClick = restaurants.map((restaurant) =>
-    //     restaurant.id === favoriteRestaurants.id ? favoriteRestaurants : restaurant
-    //     );
-    //     setRestaurants(updatedRestaurantsClick)
-    // }
 
     return (
             <div className="review-container">
@@ -36,6 +28,7 @@ function ReviewContainer({  setRestaurants, restaurants }) {
                             restaurant={restaurant}
                             setRestaurants={setRestaurants} 
                             restaurants={restaurants}
+                            restaurants2={restaurants2}
                             />
                         </div>
                         )

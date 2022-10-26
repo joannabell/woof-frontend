@@ -2,7 +2,7 @@ import React from "react";
 import Search from "./Search";
 import { NavLink } from "react-router-dom";
 
-function Header( {searchTerm, setSearchTerm} ) {
+function Header({ searchTerm, setSearchTerm }) {
   return (
     <div>
       <h1>
@@ -10,15 +10,24 @@ function Header( {searchTerm, setSearchTerm} ) {
           woof 🐾
         </span>
       </h1>
-      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <div className="nav-links">
         <div className="right">
-          <a className="btn btn-secondary" href="#" role="button">
-            Register
-          </a>
-          <a className="btn btn-secondary" href="#" role="button">
-            Log In
-          </a>
+        <NavLink to="/">
+            <a className="btn btn-secondary" href="http://localhost:3000/" role="button">
+              Home
+            </a>
+          </NavLink>
+          <NavLink to="/user">
+            <a className="btn btn-secondary" href="#" role="button">
+              Log In
+            </a>
+          </NavLink>
+          <NavLink to="reviews">
+            <a className="btn btn-secondary" href="#" role="button">
+              Favorites
+            </a>
+          </NavLink>
         </div>
       </div>
     </div>

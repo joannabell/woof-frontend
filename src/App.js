@@ -36,7 +36,7 @@ function App() {
     <div className="App">
       <Header setSearchTerm={setSearchTerm} searchTerm={searchTerm}/>
       <ImageContainer />
-      <ReviewContainer setRestaurants={setRestaurants} restaurants={restaurantsToDisplay}/>
+      <ReviewContainer restaurants2={restaurants} setRestaurants={setRestaurants} restaurants={restaurantsToDisplay}/>
     </div>   
   )
 }
