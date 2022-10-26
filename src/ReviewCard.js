@@ -3,8 +3,8 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 // import ReviewContainer from "./ReviewContainer"
 
-function ReviewCard({ restaurants, setRestaurants, restaurant }) {
-    const [favorite, setFavorite] = useState(false)
+function ReviewCard({ restaurants, setRestaurants, restaurant, deleteRestaurant }) {
+    
     // const [favoriteRestaurants, setFavoriteRestaurants] = useState([])
 
     const onFavoriteRestaurants = (favoriteRestaurants) => {
@@ -27,6 +27,16 @@ function ReviewCard({ restaurants, setRestaurants, restaurant }) {
         onFavoriteRestaurants(data)
       });
   };
+
+  function handleDeleteClick() {
+    fetch(`http://localhost:9292/restaurants/${restaurant.id}`, {
+    method: "DELETE"
+  })
+    .then((response) => response.json())
+    .then(() => {
+        deleteRestaurant(restaurant)
+  })
+  }
     
 
   return (
@@ -50,6 +60,7 @@ function ReviewCard({ restaurants, setRestaurants, restaurant }) {
             <button className="like-button" onClick={handleFavoriteClick}>♡</button>
           )
           }
+          <button onClick={handleDeleteClick} className="delete-button">🗑</button>
         </Card.Body>
       </Card>
     </div>
