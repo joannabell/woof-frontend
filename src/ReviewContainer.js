@@ -10,6 +10,7 @@ function ReviewContainer({  setRestaurants, restaurants, restaurants2, handleDel
     function deleteRestaurant(restaurantToDelete) {
         const updatedRestaurants = restaurants.filter((restaurant) => restaurant.id !== restaurantToDelete.id);
         setRestaurants(updatedRestaurants);
+        alert("Restaurant Deleted!")
     }
 
     return (
