@@ -1,31 +1,48 @@
 import './App.css';
-import NavBar from "./NavBar";
+import Header from "./Header";
+import ImageContainer from "./ImageContainer"
+import ReviewContainer from "./ReviewContainer"
 import { useState, useEffect } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [ searchValue, setSearchValue ] = useState("")//updates on search change
+  const [ restaurants, setRestaurants ] = useState([])
+  const [ searchTerm, setSearchTerm ] = useState("")//updates on search change
+  const [ addedReviews, setAddedReviews ] = useState([])
+  const [ reviews, setReviews ] = useState([])
+  const [ users, setUsers ] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:9292/")
-      .then((r) => r.json())
-      .then((data) => console.log(data))
+    fetch("http://localhost:9292/restaurants")
+    .then(data => data.json())
+    .then(restaurants => {
+      setRestaurants(restaurants)
+    })
 
-  }, []);
+    fetch("http://localhost:9292/users")
+    .then(data => data.json())
+    .then(users => setUsers(users))
 
-  // search restaurants
-  function handleSearchChange(event) {
-    setSearchValue(event.target.value)
-  }
+    fetch("http://localhost:9292/reviews")
+    .then(data => data.json())
+    .then(reviews => setReviews(reviews))
+  }, [])
 
-  const searchedRestaurants = restaurants.filter((restaurant) => {})
-  const restaurantName = restaurant.name.toLowerCase()
-  const search = searchValue.toLowerCase()
+   
+
+  const restaurantsToDisplay = restaurants.filter((restaurant) => restaurant.name.toLowerCase().includes(searchTerm.toLowerCase()));
+
+
+
 
   return (
     <div className="App">
-      <NavBar />
-    </div>
+      <Header />
+      <ImageContainer />
+      <ReviewContainer setRestaurants={setRestaurants} restaurants={restaurants}
+      restaurantsToDisplay={restaurantsToDisplay}/>
+    </div>   
   )
-  }
+}
 
 export default App;

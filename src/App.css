@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: #8FBC8F;
 }
 
 .App-logo {
@@ -28,11 +29,87 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.overlay { 
+  /* color:#fff; */
+  color: black;
+  margin-top: -20px;
+  font-family: "Serif", Georgia;
+  position: absolute;
+  z-index: 12;
+  top: 49%;
+  left:0;
+  /* background: rgba(85, 107, 47, 0.7); */
+  background: rgba(255, 255, 255, 0.5);
+  height: 18%;
+  width: 100%;
 }
+
+
+.Header {
+  background: white;
+}
+
+.card-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  padding: 10px 20px 10px 20px;
+  margin-top: 50px;
+  width: calc((100% - 130px)/3);
+  float: left;
+  display: block;
+}
+
+.card {
+  border: 1px solid;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  width: 50%;
+  height: 50%;
+}
+
+.card-strong {
+  padding: 2px;
+  margin: 8px 0;
+}
+
+.card:hover {
+  box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-p {
+  margin: 14px 0;
+}
+
+
+
+
+
+/*
+.ImageContainer {}
+
+.ReviewContainer {} */
+
+
+/* .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgb(42, 160, 238);
+  height: 100px
+}
+
+.navbar h1 {
+  font-family: 'Fredoka One', cursive;
+  font-weight: 400;
+  font-size: 38px;
+}
+
+.nav-links a{
+  color:rgb(3, 3, 3);
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 17px;
+} */
