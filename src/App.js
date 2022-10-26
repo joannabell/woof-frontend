@@ -7,10 +7,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [ restaurants, setRestaurants ] = useState([])
-  const [ searchTerm, setSearchTerm ] = useState("")//updates on search change
   const [ addedReviews, setAddedReviews ] = useState([])
   const [ reviews, setReviews ] = useState([])
   const [ users, setUsers ] = useState([])
+  const [searchTerm, setSearchTerm] = useState("")
 
   useEffect(() => {
     fetch("http://localhost:9292/restaurants")
@@ -28,19 +28,15 @@ function App() {
     .then(reviews => setReviews(reviews))
   }, [])
 
-   
-
   const restaurantsToDisplay = restaurants.filter((restaurant) => restaurant.name.toLowerCase().includes(searchTerm.toLowerCase()));
-
 
 
 
   return (
     <div className="App">
-      <Header />
+      <Header setSearchTerm={setSearchTerm} searchTerm={searchTerm}/>
       <ImageContainer />
-      <ReviewContainer setRestaurants={setRestaurants} restaurants={restaurants}
-      restaurantsToDisplay={restaurantsToDisplay}/>
+      <ReviewContainer setRestaurants={setRestaurants} restaurants={restaurantsToDisplay}/>
     </div>   
   )
 }
