@@ -11,6 +11,7 @@ function App() {
   const [ reviews, setReviews ] = useState([])
   const [ users, setUsers ] = useState([])
   const [searchTerm, setSearchTerm] = useState("")
+  const [listings, setListings] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:9292/restaurants")
@@ -30,13 +31,18 @@ function App() {
 
   const restaurantsToDisplay = restaurants.filter((restaurant) => restaurant.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
+  function handleDeleteRestaurant(restaurantToDelete) {
+    const updatedRestaurants = listings.filter((listing) => listing.id !== restaurantToDelete.id);
+    setListings(updatedRestaurants)
+  }
+
 
 
   return (
     <div className="App">
-      <Header setSearchTerm={setSearchTerm} searchTerm={searchTerm}/>
+      <Header setSearchTerm={setSearchTerm} searchTerm={searchTerm} restaurants={restaurants} setRestaurants={setRestaurants} />
       <ImageContainer />
-      <ReviewContainer restaurants2={restaurants} setRestaurants={setRestaurants} restaurants={restaurantsToDisplay}/>
+      <ReviewContainer handleDeleteRestaurant={handleDeleteRestaurant} restaurants2={restaurants} setRestaurants={setRestaurants} restaurants={restaurantsToDisplay}/>
     </div>   
   )
 }

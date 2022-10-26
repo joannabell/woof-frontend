@@ -54,6 +54,14 @@
   background: white;
 }
 
+.form {
+  font-family: "Serif", Georgia;
+}
+
+.form-title {
+  font-family: "Serif", Georgia;
+}
+
 .card-container {
   display: inline-flex;
   flex-wrap: wrap;
@@ -74,6 +82,14 @@
 
 .like-button {
   background-color: #8FBC8F;
+  border-radius: 25%;
+  width: 12%;
+  font-weight: bold;
+  color: white;
+}
+
+.delete-button {
+  background-color: #cdddcd;
   border-radius: 25%;
   width: 12%;
   font-weight: bold;

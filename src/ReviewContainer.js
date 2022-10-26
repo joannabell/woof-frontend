@@ -5,8 +5,12 @@ import Search from "./Search"
 
 // import { useState, useEffect } from "react"
 
-function ReviewContainer({  setRestaurants, restaurants, restaurants2 }) {
-    
+function ReviewContainer({  setRestaurants, restaurants, restaurants2, handleDeleteRestaurant }) {
+   
+    function deleteRestaurant(restaurantToDelete) {
+        const updatedRestaurants = restaurants.filter((restaurant) => restaurant.id !== restaurantToDelete.id);
+        setRestaurants(updatedRestaurants);
+    }
 
     return (
             <div className="review-container">
@@ -29,6 +33,8 @@ function ReviewContainer({  setRestaurants, restaurants, restaurants2 }) {
                             setRestaurants={setRestaurants} 
                             restaurants={restaurants}
                             restaurants2={restaurants2}
+                            handleDeleteRestaurant={handleDeleteRestaurant}
+                            deleteRestaurant={deleteRestaurant}
                             />
                         </div>
                         )
