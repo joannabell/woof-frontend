@@ -1,18 +1,79 @@
-import Card from "react-bootstrap/Card"
+// import Card from "react-bootstrap/Card";
+import ReviewCard from "./ReviewCard"
+import { useState, useEffect } from "react"
+
 // import { useState, useEffect } from "react"
 
-function ReviewContainer({ title, image, description }) {
+function ReviewContainer({  setRestaurants, restaurants }) {
+    const [favorites, setFavorites] = useState(false)
+
+    const onFavoriteRestaurants = (favoriteRestaurants) => {
+        const updatedRestaurantsClick = restaurants.map((restaurant) =>
+        restaurant.id === favoriteRestaurants.id ? favoriteRestaurants : restaurant
+        );
+        setRestaurants(updatedRestaurantsClick)
+    }
+
+    const handleFavoriteRestaurants = () => {
+        setFavorites((favorite) => !favorite);
+    };
+
     return (
-        <Card style = {{ width: '12rem', margin: "1rem" }}>
-            <Card.Img variant="top" src={image} alt={title} />
-            <Card.Body>
-                <Card.Title>{title}</Card.Title>
-                <Card.Text>
-                    {description}
-                </Card.Text>
-            </Card.Body>
-        </Card>
+            <div className="review-container">
+                {/* <div className="new-review">
+                    <ReviewCard
+                    restaurants={restaurants}
+                    setRestaurants={setRestaurants}
+                    favorites={favorites}
+                    setFavorites={setFavorites}
+                    onFavoriteRestaurants={onFavoriteRestaurants} 
+                    /> 
+                    </div> */}
+                <style>{'body { background-color: rgb(231, 222, 210); }'}</style>
+                <div className="restaurants">
+                    {restaurants.map((restaurant) => {
+                        return (
+                        <div key={restaurant.id} className="restaurant" >
+                            <ReviewCard
+                            restaurant={restaurant}
+                            setRestaurants={setRestaurants} 
+                            restaurants={restaurants}/>
+                        </div>
+                        )
+                    }
+                    )} 
+                </div>
+                <div className="footer"></div>
+            </div>
+        
     )
+    
+    
+    
+    // const [ restaurants, setRestaurants ] = useState([])
+    
+    
+    // const cards = restaurants.map((restaurant) => (
+    //     <ReviewCard style = {{ width: '12rem', margin: "1rem" }}>
+    //         {/* <Card.Img variant="top" src={restaurant.image} alt={title} /> */}
+    //         <ReviewCard.Body>
+    //             <ReviewCard.Title>{restaurant.name}</ReviewCard.Title>
+    //             <ReviewCard.Text>
+    //                 {restaurant.summary}
+    //                 {restaurant.food_type}
+    //                 {restaurant.price_rating}
+    //             </ReviewCard.Text>
+    //         </ReviewCard.Body>
+    //     </ReviewCard>
+    //     )
+    // )
+
+    // return (
+    //     <ReviewCard.Group itemsPerRow={3}> { cards } </ReviewCard.Group>
+    // )
+
+
+
 }
 
 export default ReviewContainer;
