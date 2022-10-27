@@ -1,70 +1,313 @@
-# Getting Started with Create React App
+# Woof
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Team Members: Deryn Brown, Joanna Bell
+ 
+(screen shot of homepage)
 
-## Available Scripts
 
-In the project directory, you can run:
+# Overview
 
-### `npm start`
+Looking for a restaurant that you can enjoy and your furry best friend? Look no further, you've found it. Woof was designed with both of you in mind. Search restaurants to find one near you along with their type of food and user ratings. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Technology
 
-### `npm test`
+This app was built using React and Ruby as well as Active Model Serializers, NodeJS and React Router Dom.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+# Functionality
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Search |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Search by restaurant in the search bar at the top of the page. Notice the real-time changes to the restaurant listings below. 
+(screen shot of search bar)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Add New Restaurant |
 
-### `npm run eject`
+Because we can't be everywhere all at once, we need your help. Add as many new restaurants as you'd like and they'll be uploaded to our database.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Favorites |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Every restaurant has a love button. If you visit one and love it, click the button and it'll be saved to your own personal Favorites page. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+| Delete A Restaurant |
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+If you had a bad experience and want to prevent other Woof-ers from the same, delete it. (And, then, go and add more).
 
-## Learn More
+| Find Now! |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If you don't feel like searching, use the Find Now! button to quickly go directly to the restaurant listings.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+# Next Steps
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+There are always ways to improve an app. For Woof, our goal is to continually improve the design (CSS) and user experience. And, we're always open to feedback!
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
