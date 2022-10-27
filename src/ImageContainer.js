@@ -1,11 +1,16 @@
 import { Carousel, Row, Card } from "react-bootstrap";
 
-function ImageContainer() {
+
+function ImageContainer( {refs} ) {
+    const handleScrollClick = () => {
+        refs.current?.scrollIntoView({behavior: 'smooth'})
+    }
+
   return (
     <div>
       <div className="overlay">
         <h1 className="overlay-text"><br /> Restaurants for Dogs <br /> & Their People!</h1>
-        <button className="find-one-button">FIND ONE!</button>
+        <button onClick={handleScrollClick} className="find-one-button">FIND ONE!</button>
       </div>
       <Carousel>
         <Carousel.Item>

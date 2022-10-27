@@ -1,14 +1,16 @@
-import React from "react";
+import React, {useRef} from "react";
 import Search from "./Search";
 import { NavLink, Route, Routes } from "react-router-dom";
 import NewRestaurantForm from "./NewRestaurantForm"
 import Favorites from "./Favorites"
 
-function Header({ searchTerm, setSearchTerm, restaurants, setRestaurants }) {
+function Header({ searchTerm, setSearchTerm, restaurants, setRestaurants, favoriteRes, setFavoriteRes }) {
 
     const handleAddRestaurant = (newRestaurant) => {
         setRestaurants([newRestaurant, ...restaurants])
       }
+
+      
 
   return (
     <div>
@@ -37,9 +39,8 @@ function Header({ searchTerm, setSearchTerm, restaurants, setRestaurants }) {
           </NavLink>
           <Routes>
             <Route path="/user" element={<NewRestaurantForm handleAddRestaurant={handleAddRestaurant}/>} />
-            <Route path="/favorites" element={<Favorites/>} />
+            <Route path="/favorites" element={<Favorites favoriteRes={favoriteRes} setFavoriteRes={setFavoriteRes}/>} />
           </Routes>
-          
         </div>
       </div>
     </div>

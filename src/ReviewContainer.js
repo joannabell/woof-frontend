@@ -1,11 +1,12 @@
 // import Card from "react-bootstrap/Card";
 import ReviewCard from "./ReviewCard"
 import { useState, useEffect } from "react"
-import Search from "./Search"
+// import {useRef} from 'react';
 
 // import { useState, useEffect } from "react"
 
-function ReviewContainer({  setRestaurants, restaurants, restaurants2, handleDeleteRestaurant }) {
+function ReviewContainer({  setRestaurants, restaurants, restaurants2, handleDeleteRestaurant, refs }) {
+    
    
     function deleteRestaurant(restaurantToDelete) {
         const updatedRestaurants = restaurants.filter((restaurant) => restaurant.id !== restaurantToDelete.id);
@@ -14,18 +15,9 @@ function ReviewContainer({  setRestaurants, restaurants, restaurants2, handleDel
     }
 
     return (
-            <div className="review-container">
-                {/* <div className="new-review">
-                    <ReviewCard
-                    restaurants={restaurants}
-                    setRestaurants={setRestaurants}
-                    favorites={favorites}
-                    setFavorites={setFavorites}
-                    onFavoriteRestaurants={onFavoriteRestaurants} 
-                    /> 
-                    </div> */}
+            <div id="list-of-restaurants" className="review-container">
                 <style>{'body { background-color: rgb(231, 222, 210); }'}</style>
-                <div className="restaurants">
+                <div ref={refs} className="restaurants">
                     {restaurants.map((restaurant) => {
                         return (
                         <div key={restaurant.id} className="restaurant" >
