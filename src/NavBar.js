@@ -13,7 +13,7 @@ function NavBar() {
               Add New Restaurant
             </a>
           </NavLink>
-          <NavLink to="favorites">
+          <NavLink to="/favorites">
             <a className="btn btn-secondary" href="#" role="button">
               Favorites
             </a>
