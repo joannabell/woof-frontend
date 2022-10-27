@@ -5,14 +5,10 @@ import { useState, useEffect } from "react"
 
 // import { useState, useEffect } from "react"
 
-function ReviewContainer({  setRestaurants, restaurants, restaurants2, handleDeleteRestaurant, refs }) {
+function ReviewContainer({ deleteRestaurant, onFavoriteRestaurants, setRestaurants, restaurants, restaurants2, handleDeleteRestaurant, refs }) {
     
    
-    function deleteRestaurant(restaurantToDelete) {
-        const updatedRestaurants = restaurants.filter((restaurant) => restaurant.id !== restaurantToDelete.id);
-        setRestaurants(updatedRestaurants);
-        alert("Restaurant Deleted!")
-    }
+ 
 
     return (
             <div id="list-of-restaurants" className="review-container">
@@ -28,6 +24,7 @@ function ReviewContainer({  setRestaurants, restaurants, restaurants2, handleDel
                             restaurants2={restaurants2}
                             handleDeleteRestaurant={handleDeleteRestaurant}
                             deleteRestaurant={deleteRestaurant}
+                            onFavoriteRestaurants={onFavoriteRestaurants}
                             />
                         </div>
                         )
