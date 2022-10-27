@@ -1,18 +1,7 @@
-import { useState } from "react";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-// import ReviewContainer from "./ReviewContainer"
 
-function ReviewCard({ restaurants, setRestaurants, restaurant, deleteRestaurant }) {
-    
-    // const [favoriteRestaurants, setFavoriteRestaurants] = useState([])
+function ReviewCard({ deleteRestaurant, onFavoriteRestaurants, restaurant }) {
 
-    const onFavoriteRestaurants = (favoriteRestaurants) => {
-        const updatedRestaurantsClick = restaurants.map((restaurant) =>
-        restaurant.id === favoriteRestaurants.id ? favoriteRestaurants : restaurant
-        );
-        setRestaurants(updatedRestaurantsClick)
-    }
 
  const handleFavoriteClick = () => {
     fetch(`http://localhost:9292/restaurants/${restaurant.id}`, {
@@ -44,17 +33,17 @@ function ReviewCard({ restaurants, setRestaurants, restaurant, deleteRestaurant 
       <Card className="card" style={{ width: "20rem" }}>
         <Card.Body style={{ textAlign: "left" }}>
           <Card.Title>
-            <strong>{restaurant.name}</strong>
+            <strong>{restaurant?.name}</strong>
           </Card.Title>
           <Card.Text>
             <strong>Summary:</strong>
-            <p>{restaurant.summary}</p>
+            <p>{restaurant?.summary}</p>
             <strong>Type of Food:</strong>
-            <p>{restaurant.food_type}</p>
+            <p>{restaurant?.food_type}</p>
             <strong>Price Rating:</strong>
-            <p>{restaurant.price_rating}</p>
+            <p>{restaurant?.price_rating}</p>
           </Card.Text>
-          {restaurant.favorite ? (
+          {restaurant?.favorite ? (
             <button className="like-button" variant="primary" onClick={handleFavoriteClick}>♥</button>
           ) : (
             <button className="like-button" onClick={handleFavoriteClick}>♡</button>

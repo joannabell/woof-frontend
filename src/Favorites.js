@@ -1,26 +1,17 @@
-import FavoriteCard from "./FavoriteCard"
+import ReviewCard from "./ReviewCard";
 
-function Favorites( {favoriteRes, setFavoriteRes} ) {
-    const favoriteCard = favoriteRes.map((res) => {
-        return (
-    
-            <FavoriteCard
-            key={res.id}
-            name={res.name}
-            summary={res.summary}
-            
-            
-            />
-        
-        )
-    }
-    )
-    
+function Favorites({ deleteRestaurant, onFavoriteRestaurants, favoriteRes, setFavoriteRes }) {
+  const favoriteCard = favoriteRes.map((res) => {
     return (
-        <div>
-            {favoriteCard}
-        </div>
-    )
+      <ReviewCard
+        key={res.id}
+        restaurant={res}
+        onFavoriteRestaurants={onFavoriteRestaurants}
+        deleteRestaurant={deleteRestaurant}
+      />
+    );
+  });
+  return <div>{favoriteCard}</div>;
 }
 
 export default Favorites;

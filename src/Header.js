@@ -1,16 +1,30 @@
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import Search from "./Search";
 import { NavLink, Route, Routes } from "react-router-dom";
-import NewRestaurantForm from "./NewRestaurantForm"
-import Favorites from "./Favorites"
+import NewRestaurantForm from "./NewRestaurantForm";
+import Favorites from "./Favorites";
+import ImageContainer from "./ImageContainer";
+import ReviewContainer from "./ReviewContainer";
+import NavBar from "./NavBar";
 
-function Header({ searchTerm, setSearchTerm, restaurants, setRestaurants, favoriteRes, setFavoriteRes }) {
+function Header({
+  handleDeleteRestaurant,
+  restaurantsToDisplay,
+  refs,
+  searchTerm,
+  setSearchTerm,
+  restaurants,
+  setRestaurants,
+  favoriteRes,
+  setFavoriteRes,
+  onFavoriteRestaurants,
+  deleteRestaurant
+}) {
+  const handleAddRestaurant = (newRestaurant) => {
+    setRestaurants([newRestaurant, ...restaurants]);
+  };
 
-    const handleAddRestaurant = (newRestaurant) => {
-        setRestaurants([newRestaurant, ...restaurants])
-      }
-
-      
+  console.log(favoriteRes)
 
   return (
     <div>
@@ -19,27 +33,57 @@ function Header({ searchTerm, setSearchTerm, restaurants, setRestaurants, favori
           woof 🐾
         </span>
       </h1>
-      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+
       <div className="nav-links">
         <div className="right">
-        <NavLink to="/">
-            <a className="btn btn-secondary" href="http://localhost:3000/" role="button">
-              Home
-            </a>
-          </NavLink>
-          <NavLink to="/user">
-            <a className="btn btn-secondary" href="#" role="button">
-              Add New Restaurant
-            </a>
-          </NavLink>
-          <NavLink to="favorites">
-            <a className="btn btn-secondary" href="#" role="button">
-              Favorites
-            </a>
-          </NavLink>
           <Routes>
-            <Route path="/user" element={<NewRestaurantForm handleAddRestaurant={handleAddRestaurant}/>} />
-            <Route path="/favorites" element={<Favorites favoriteRes={favoriteRes} setFavoriteRes={setFavoriteRes}/>} />
+            <Route
+              path="/user"
+              element={
+                <div>
+                  <NavBar />
+                  <NewRestaurantForm
+                    handleAddRestaurant={handleAddRestaurant}
+                  />
+                </div>
+              }
+            />
+            <Route
+              path="/favorites"
+              element={
+                <div>
+                  <NavBar />
+                  <Favorites
+                    favoriteRes={favoriteRes}
+                    setFavoriteRes={setFavoriteRes}
+                    onFavoriteRestaurants={onFavoriteRestaurants}
+                    deleteRestaurant={deleteRestaurant}
+                  />
+                </div>
+              }
+            />
+            <Route
+              path="/"
+              element={
+                <div>
+                  <Search
+                    searchTerm={searchTerm}
+                    setSearchTerm={setSearchTerm}
+                  />
+                  <NavBar />
+                  <ImageContainer refs={refs} />
+                  <ReviewContainer
+                    refs={refs}
+                    handleDeleteRestaurant={handleDeleteRestaurant}
+                    restaurants2={restaurants}
+                    setRestaurants={setRestaurants}
+                    restaurants={restaurantsToDisplay}
+                    onFavoriteRestaurants={onFavoriteRestaurants}
+                    deleteRestaurant={deleteRestaurant}
+                  />
+                </div>
+              }
+            />
           </Routes>
         </div>
       </div>
@@ -47,32 +91,3 @@ function Header({ searchTerm, setSearchTerm, restaurants, setRestaurants, favori
   );
 }
 export default Header;
-
-// function Header() {
-//     return (
-//       <>
-//       <header className="navbar">
-//         <div className="container">
-//           <div class="left">
-//             <ul>
-//               <li class="active">
-//                 <NavLink exact to="/" style={{fontWeight: 'bold'}}>Home</NavLink>
-//               </li>
-
-//               <li>
-//               <NavLink exact to="/reviews" style={{fontWeight: 'bold'}}>Reviews</NavLink>
-//               </li>
-//             </ul>
-//           </div>
-
-//           <div class="center">
-//                 <NavLink exact to="/" style={{fontWeight: 'bold'}}>Woof (emoji)</NavLink>
-//           </div>
-
-//         </div>
-//       </header>
-//       </>
-//     );
-//   }
-
-//   export default Header;
