@@ -37,7 +37,7 @@ function ReviewCard({ deleteRestaurant, onFavoriteRestaurants, restaurant }) {
           </Card.Title>
           <Card.Text>
             <strong>Summary:</strong>
-            <p>{restaurant?.summary}</p>
+            <p>{restaurant?.summary.substr(0, restaurant.summary.indexOf('.', 1))}.</p>
             <strong>Type of Food:</strong>
             <p>{restaurant?.food_type}</p>
             <strong>Price Rating:</strong>
