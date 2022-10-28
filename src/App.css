@@ -74,6 +74,7 @@
   width: calc((100% - 130px)/3);
   float: left;
   display: block;
+  height: 50vh;
 }
 
 .card {
@@ -83,6 +84,7 @@
   width: 50%;
   height: 50%;
 }
+
 
 .like-button {
   background-color: #8FBC8F;
